@@ -24,6 +24,12 @@ p {
     flex: 1;
 }
 
+.flex-col {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
 .toolbar {
     position: absolute;
     top: 0;

@@ -1,3 +1,4 @@
+import { News } from './../../models/news.interface';
 import { Component, OnInit } from '@angular/core';
 import { NewsService } from 'src/app/services/news.service';
 
@@ -13,12 +14,24 @@ export class NewsComponent implements OnInit {
 
   constructor(private newsService: NewsService) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
+
+
+  // GET All News
   seeNewNews() {
-    this.newsService.getNews().subscribe(data => {
-      this.localNewsVar = data
-    })
+    this.newsService.getNews().subscribe({
+      next: (data: News[]) => {
+        this.localNewsVar = data;
+      },
+      error: (error) => {
+        console.log(error);
+      }
+    });
   }
 
+  // POST a News
+  post(title: string, body: string) {
+    console.log('hi: ', title, body);
+  }
 }
