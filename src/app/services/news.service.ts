@@ -19,5 +19,8 @@ export class NewsService {
     return this.http.get<News[]>(this.url)
   }
 
-  // POST New
+  // POST New News
+  postNews(news: News): Observable<News> {
+    return this.http.post<News>(this.url, news);
+  }
 }

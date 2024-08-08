@@ -30,8 +30,16 @@ export class NewsComponent implements OnInit {
     });
   }
 
-  // POST a News
+  // POST New News
   post(title: string, body: string) {
-    console.log('hi: ', title, body);
+    const newNews: News = { title: title, body: body };
+
+    this.newsService.postNews(newNews).subscribe({
+      next: (response: News) => {
+        alert('Successfully postin news');
+        this.seeNewNews();
+      },
+      error: (error) => { alert('Failed to post news') }
+    })
   }
 }
