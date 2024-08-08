@@ -1,0 +1,7 @@
+<div>
+  <span>add a new account</span>
+  <div class="flex-row">
+    <input type="text" #AccountName />
+    <button (click)="addNew(AccountName.value, 'inactive')">Save</button>
+  </div>
+</div>
