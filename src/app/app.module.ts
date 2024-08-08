@@ -5,15 +5,18 @@ import { AppComponent } from './app.component';
 import { AddAccountComponent } from './components/add-account/add-account.component';
 import { AccountsListComponent } from './components/accounts-list/accounts-list.component';
 import { AccountsService } from './services/accounts.service';
+import { NewsComponent } from './components/news/news.component';
+import { HttpClientModule } from '@angular/common/http'
 
 @NgModule({
   declarations: [
     AppComponent,
     AddAccountComponent,
-    AccountsListComponent
+    AccountsListComponent,
+    NewsComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule, HttpClientModule, 
   ],
   providers: [AccountsService],
   bootstrap: [AppComponent]

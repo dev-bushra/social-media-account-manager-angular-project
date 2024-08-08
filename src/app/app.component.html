@@ -21,7 +21,16 @@
 </div>
 
 <div class="main content" role="main">
+  <app-news></app-news>
+  <br />
+  <br />
+  <hr />
   <app-add-account></app-add-account>
   <hr />
   <app-accounts-list *ngFor="let account of accounts; let i=index" [accountAll]="account" [id]="i"></app-accounts-list>
+  <br />
+  <br />
+  <hr />
+  <app-news></app-news>
+
 </div>
